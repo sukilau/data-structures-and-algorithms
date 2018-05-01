@@ -39,3 +39,19 @@ Programming solutions to common problems in data structures, algorithms and conc
 * depth first search (graph)
 
 #### Other problems
+
+
+#### Time & Space Complexity
+
+| Data Structure     | Implementation  | add_first(x)  | remove_first()| add_last(x) | remove_last() | add(i,x) 	 | remove(i) 	 | get(i) 		 | set(i,x)		 |
+|:-------------------|:----------------|:--------------|:--------------|:------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+| Singly LinkedList  |                 | O(1)          | O(1)          | O(1)        | O(1)			 | O(i)		     | O(i)			 | O(i)			 | O(i)			 |
+| Doubly LinkedList  |                 | O(1)          | O(1)          | O(1)        | O(1)			 | O(min{i,n-i}) | O(min{i,n-i}) | O(min{i,n-i}) | O(min{i,n-i}) |
+| Stack 			 | SLList          | O(1) push     | O(1) pop      |     		 |    	 		 | O(i)		     | O(i)			 | O(i)			 | O(i)			 |
+| Stack 			 | Array           | O(1) push     | O(1) pop      |     		 |    	 		 | O(n-i)	     | O(n-i)		 | O(1)			 | O(1)		 	 |
+| Queue 			 | SLList          |               | O(1) deque    | O(1) enqueue|    		     | O(i)		     | O(i)			 | O(i)			 | O(i)			 |
+| Queue 			 | Circular Array  |               | O(1) deque    | O(1) enqueue|    		     | O(n-i)	     | O(n-i)		 | O(1)		 	 | O(1)		 	 |
+| Deque 			 | DLList          | O(1)          | O(1)          | O(1)        | O(1)			 | O(min{i,n-i}) | O(min{i,n-i}) | O(min{i,n-i}) | O(min{i,n-i}) |
+| Deque 			 | Array           | O(1)          | O(1)          | O(1)        | O(1)			 | O(n-i)	     | O(n-i)		 | O(1)		 	 | O(1)		 	 |
+
+
