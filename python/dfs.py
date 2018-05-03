@@ -17,17 +17,25 @@ from collections import defaultdict
 class Graph:
     '''This class represents a directed graph using adjacency list representation'''
     def __init__(self):
-        self.graph = defaultdict(list)
-    def addEdge(self,u,v):
-        self.graph[u].append(v)
+        self.a = defaultdict(list)
 
-def dfsHelper(g, v, visited):
-    visited[v] = True
-    print v,
-    for i in g.graph[v]:
-        if not visited[i]:
-            dfsHelper(g, i, visited)
+    def addEdge(self, u,v ):
+        self.a[u].append(v)
 
-def dfs(g, v):
-    visited = [False]*(len(g.graph))
-    dfsHelper(g, v, visited)
+    def dfs(self, s):
+        '''
+        The idea is similar to dfs for tree 
+        except that we have to keep a boolean visited array to keep track of visited node
+        '''
+        search_list = []
+        visited = [False]*len(self.a)
+        return self._dfs(s, search_list, visited)
+
+    def _dfs(self, s, search_list, visited):
+        '''Helper method using recursion'''
+        visited[s] = True
+        search_list.append(s)
+        for i in self.a[s]:
+            if not visited[i]:
+                self._dfs(i, search_list, visited)
+        return search_list
